@@ -14,8 +14,6 @@ function sortStr(str) {
     });
   });
 
-  
-
   return resArr.join(' ');
 }
 

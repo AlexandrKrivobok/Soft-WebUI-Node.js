@@ -30,15 +30,15 @@ function cardsResieving(arrOfCards) {
   });
 
   let count = (team) => {
-    let counter = 0;
+    let counter = 11;
 
     team.forEach(e => {
       if (e === 'kicked') {
-        counter++;
+        counter--;
       }
     });
 
-    result.push(11 - counter);
+    result.push(counter);
   }
 
   count(teamA);

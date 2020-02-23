@@ -33,8 +33,7 @@ function sortTriangles(arrOfTriangles) {
     return area;
   }
 
-  changedData.sort((a, b) => a.area < b.area ? 1 : -1);
-  
+  changedData.sort((a, b) => a.area < b.area ? 1 : -1); // {area: 25, name: 'ABC'} 
 
   return changedData.map(e => e.name);
 }

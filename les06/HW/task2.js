@@ -16,9 +16,9 @@ function meeting(arrOfRooms, chairsNeed) {
     const chairs = room[1];
 
     if (people < chairs) {
-      if (chairs - people > chairsNeed - counter) {
+      if (chairs - people > chairsNeed - counter) { // та самая строчка
         result.push(chairsNeed - counter);
-        counter += chairsNeed - counter; // counter = chairsNeed
+        counter += chairsNeed - counter; 
       } else {
         result.push(chairs - people);
         counter += chairs - people;

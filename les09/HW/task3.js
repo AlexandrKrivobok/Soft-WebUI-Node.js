@@ -1,5 +1,4 @@
 const myLink = 'https://randomuser.me/api/?results=1000';
-let result = [];
 
 function loadUsers(link) {
   const req = new XMLHttpRequest();

@@ -40,5 +40,5 @@ function sortTriangles(arrOfTriangles) {
 
 
 
-console.log(sortTriangles(arrOfTriangles));
+// console.log(sortTriangles(arrOfTriangles));
 // export {sortTriangles};

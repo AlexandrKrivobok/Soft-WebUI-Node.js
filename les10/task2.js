@@ -1,5 +1,5 @@
 function countdown(msecs) {
-  let sign = msecs < 0 ? '-' : '+';
+  let sign = msecs < 0 ? '' : '+';
   let hours   = parseInt(msecs / 3600000).toString();
   hours = hours.length > 1? hours: '0' + hours;
 
@@ -9,7 +9,7 @@ function countdown(msecs) {
   let seconds = parseInt(msecs % 360000 % 60000 / 1000).toString();
   seconds = seconds.length > 1? seconds: '0' + seconds;
 
-  return `${hours}:${minutes}:${seconds}`
+  return `${sign}${hours}:${minutes}:${seconds}`
 }
 
 console.log(countdown(-154800000))  // return  '-43:00:00'

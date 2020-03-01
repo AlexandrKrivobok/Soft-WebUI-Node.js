@@ -32,5 +32,5 @@ function envelopeInput(env1, env2) {
   return 0;
 }
 
-console.log(envelopeInput(env1, env2));
-console.log(envelopeInput(env3, env4));
+// console.log(envelopeInput(env1, env2));
+// console.log(envelopeInput(env3, env4));

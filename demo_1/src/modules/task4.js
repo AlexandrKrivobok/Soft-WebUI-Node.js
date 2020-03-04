@@ -1,4 +1,4 @@
-function takePalindrom(num) {
+export function checkPolindrome(num) {
   let myStr = num.toString();
   let myIndex = myStr.length - 1;
 

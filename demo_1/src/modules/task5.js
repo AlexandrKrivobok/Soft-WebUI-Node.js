@@ -1,4 +1,4 @@
-function luckyTicket({min, max}) {
+export function getLuckyTicket({min, max}) {
   let localMin = min;
   let localMax = max;
   let res = {};
@@ -58,6 +58,6 @@ function luckyTicket({min, max}) {
   return res;
 }
 
-// console.log(luckyTicket({min:1, max:999999}));
-// console.log(luckyTicket({min:123221, max:452999}));
-// console.log(luckyTicket({min:2332, max:88594}));
+// console.log(getLuckyTicket({min:1, max:999999}));
+// console.log(getLuckyTicket({min:123221, max:452999}));
+// console.log(getLuckyTicket({min:2332, max:88594}));

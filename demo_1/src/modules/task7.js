@@ -1,4 +1,4 @@
-function fibInRange({min, max, length}) {
+export function fibRow({min, max, length}) {
   let res = [];
   let prev = 1;
   let cur = 1;

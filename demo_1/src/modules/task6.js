@@ -1,4 +1,4 @@
-function series(length, minSqr) {
+export function getNumbers(length, minSqr) {
   let res = [];
   
   const firstNum = Math.sqrt(minSqr) % 1 === 0 ? Math.sqrt(minSqr) + 1 : Math.ceil(Math.sqrt(minSqr));
@@ -7,8 +7,8 @@ function series(length, minSqr) {
     res.push(firstNum + i);
   }
 
-  return res;
+  return res.join(', ');
 }
 
-// console.log(series(10, 25));
-// console.log(series(10, 24.5));
+// console.log(getNumbers(10, 25));
+// console.log(getNumbers(10, 24.5));

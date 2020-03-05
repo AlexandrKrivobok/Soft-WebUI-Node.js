@@ -24,14 +24,5 @@ export function testChess(ass) {
     it('integer params only', () => {
       ass.deepEqual(createCheeseBoard(6.5, 6, 'i'), {status: 'failure', reason: 'width, height must be an integer'});
     });
-
-    
-
-
-    
-  
-  });
-
-
-  
+  }); 
 }

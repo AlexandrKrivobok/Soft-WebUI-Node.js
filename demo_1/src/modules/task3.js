@@ -11,6 +11,7 @@ export function sortTriangle(arrOfTriangles) {
   }
 
   let valObj = false;
+  
   arrOfTriangles.forEach(e => {
     if (
     !e[e.vertices[0].toLowerCase()] ||

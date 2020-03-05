@@ -1,17 +1,45 @@
-export function getLuckyTicket({min, max}) {
-  let localMin = min;
-  let localMax = max;
+export function getLuckyTicket(context) {
+  // validation
+  if (typeof context !== 'object' || Array.isArray(context)) {
+    return {status: 'failure', reason: 'wrong input type'};
+  }
+
+  let localMin = Math.abs(context.min);
+  let localMax = Math.abs(context.max);
+
+  if (!localMin || !localMax) {
+    return {status: 'failure', reason: 'wrong input type'};
+  }
+
+  if (localMin !== parseInt(localMin) || localMax !== parseInt(localMax)) {
+    return {status: 'failure', reason: 'non integer parameters'}
+  }
+
+  if (localMin > localMax) {
+    return {status: 'failure', reason: 'min > max'};
+  }
+
+  if (
+  localMin < 1 ||
+  localMin > 999999  ||
+  localMax < 1 ||
+  localMax > 999999
+  ) {
+    return {status: 'failure', reason: 'out of range'};
+  }
+
+  
   let res = {};
-  res.ez = 0;
-  res.hrd = 0;
+  res.simpleCount = 0;
+  res.hardCount = 0;
 
   for (localMin; localMin < localMax; localMin++) {
     if (checkEz(localMin)) {
-      res.ez += 1;
+      res.simpleCount += 1;
     }
 
     if (checkHrd(localMin)) {
-      res.hrd += 1;
+      res.hardCount += 1;
     }
   }
 
@@ -47,9 +75,9 @@ export function getLuckyTicket({min, max}) {
     return false;
   }
 
-  if (res.ez === res.hrd) {
+  if (res.simpleCount === res.hardCount) {
     res.winner = `it's a Draw!`; 
-  } else if (res.ez > res.hrd) {
+  } else if (res.simpleCount > res.hardCount) {
     res.winner = `the winner is: EASY WAY`;
   } else {
     res.winner = `the winner is: HARD WAY`;
@@ -57,7 +85,3 @@ export function getLuckyTicket({min, max}) {
 
   return res;
 }
-
-// console.log(getLuckyTicket({min:1, max:999999}));
-// console.log(getLuckyTicket({min:123221, max:452999}));
-// console.log(getLuckyTicket({min:2332, max:88594}));

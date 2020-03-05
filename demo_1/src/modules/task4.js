@@ -1,4 +1,13 @@
 export function checkPolindrome(num) {
+  // validation
+  if (isNaN(num)) {
+    return {status: 'failure', reason: 'wrong input type'};
+  }
+
+  if (num !== parseInt(num)) {
+    return {status: 'failure', reason: 'non integer input'}
+  }
+
   let myStr = num.toString();
   let myIndex = myStr.length - 1;
 
@@ -28,8 +37,3 @@ export function checkPolindrome(num) {
 
   return 0;
 }
-
-// console.log(takePalindrom(11221));    
-// console.log(takePalindrom(102873642983888374889));
-// console.log(takePalindrom(111));
-// console.log(takePalindrom(1));
